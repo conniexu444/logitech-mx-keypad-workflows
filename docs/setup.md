@@ -1,14 +1,28 @@
 # Setup guide
 
-## 1. Back up Logi Options+
+## Automatic plugin installation
+
+The fastest path is:
+
+```bash
+./scripts/check-prerequisites.sh
+./scripts/build.sh
+./scripts/install-plugins.sh
+```
+
+This installs the custom action plugins but deliberately leaves your current button assignments alone. Restart Logi Options+ and follow [map-actions.md](map-actions.md).
+
+## Manual installation
+
+### 1. Back up Logi Options+
 
 Quit Logi Options+, run `scripts/backup-logi-config.sh`, and keep the printed backup path.
 
-## 2. Create the launcher in Logi Options+
+### 2. Create the launcher in Logi Options+
 
 Use the default profile and assign **Open Application** actions following `config/workflows.example.json`. Use your own icons or generated neutral icons. Avoid committing exported profiles because they can contain local paths and identifiers.
 
-## 3. Generate plugin artwork
+### 3. Generate plugin artwork
 
 ```bash
 python3 -m pip install Pillow
@@ -18,7 +32,7 @@ python3 src/figma-workflows/generate_icons.py
 python3 src/starlight/generate_starlight_frames.py
 ```
 
-## 4. Build plugins
+### 4. Build plugins
 
 Each `.csproj` references the `PluginApi.dll` shipped inside Logi Plugin Service:
 
@@ -37,7 +51,7 @@ Install the generated plugin directory under:
 
 Restart Logi Options+ after installing. Add the newly available actions to app-specific profiles through the UI.
 
-## 5. Enable macOS permissions
+### 5. Enable macOS permissions
 
 System Settings → Privacy & Security may need:
 
@@ -46,7 +60,7 @@ System Settings → Privacy & Security may need:
 
 Grant only permissions required by the workflows you install.
 
-## 6. Optional voice support
+### 6. Optional voice support
 
 Install `whisper.cpp`, download a model yourself, and set:
 
@@ -54,4 +68,4 @@ Install `whisper.cpp`, download a model yourself, and set:
 export CODEX_KEYPAD_WHISPER_MODEL="$HOME/.cache/whisper/ggml-base.en.bin"
 ```
 
-Compile the Swift recorder as an app bundle using the supplied source and `Info.plist`, sign it locally, and place it in the Codex plugin's `bin` folder. The first launch should produce the macOS microphone prompt.
+`scripts/build.sh` compiles and locally signs the supplied Swift recorder. The first launch should produce the macOS microphone prompt.

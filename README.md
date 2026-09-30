@@ -1,8 +1,36 @@
 # Logitech MX Creative Console workflows
 
-A privacy-safe reference implementation for turning the nine-key Logitech MX Creative Console keypad into an app-aware launcher and workflow surface for Codex, Claude Code, Cursor, Figma/FigJam, GitHub, VS Code, and other tools.
+A reusable set of workflows for turning the nine-key Logitech MX Creative Console keypad into an app-aware launcher and workflow surface for Codex, Claude Code, Cursor, Figma/FigJam, GitHub, VS Code, and other tools.
 
-This repository documents a real daily setup, but contains no exported user profiles, task databases, recordings, tokens, usernames, or absolute home-directory paths.
+These are the source files and layouts behind my daily keypad setup. You can build the plugins, install their actions, and map the same layouts onto your own Logitech keypad.
+
+## Quick start
+
+```bash
+git clone https://github.com/conniexu444/logitech-mx-keypad-workflows.git
+cd logitech-mx-keypad-workflows
+./scripts/check-prerequisites.sh
+./scripts/build.sh
+./scripts/install-plugins.sh
+```
+
+Restart Logi Options+, then use [map-actions.md](docs/map-actions.md) to place the actions on your keypad. The installer adds the reusable actions; it does not overwrite your existing pages or button assignments.
+
+## Homepage assets
+
+The exact seven launcher images are included in [`assets/homepage`](assets/homepage):
+
+<p>
+  <img src="assets/homepage/claude.png" alt="Claude" width="72">
+  <img src="assets/homepage/codex.png" alt="Codex" width="72">
+  <img src="assets/homepage/grok-bot.png" alt="Grok Bot" width="72">
+  <img src="assets/homepage/figma.png" alt="Figma" width="72">
+  <img src="assets/homepage/vscode.png" alt="Visual Studio Code" width="72">
+  <img src="assets/homepage/cursor.png" alt="Cursor" width="72">
+  <img src="assets/homepage/github.png" alt="GitHub" width="72">
+</p>
+
+Use Logi Options+’s **Replace icon** control and select the matching PNG.
 
 ## What the setup does
 
@@ -32,7 +60,7 @@ Run:
 ./scripts/check-prerequisites.sh
 ```
 
-## Start safely
+## Install manually or customize
 
 Logitech does not currently expose these profile files as a stable public configuration API. Back up your current setup before experimenting:
 
@@ -40,11 +68,11 @@ Logitech does not currently expose these profile files as a stable public config
 ./scripts/backup-logi-config.sh
 ```
 
-Then follow [setup.md](docs/setup.md). The source under `src/` is intentionally separated by workflow so you can borrow one idea without adopting the entire setup.
+Then follow [setup.md](docs/setup.md). The source under `src/` is separated by workflow so you can install one plugin or customize its prompts without adopting the entire setup.
 
-## Privacy and security
+## Personal data and security
 
-Read [privacy.md](docs/privacy.md) before publishing an exported profile. Codex recent-task buttons query only task IDs from your local Codex database; the database itself is never copied into this repository. Voice recordings are temporary and transcription runs locally.
+The repository does not contain my personal paths, task database, recordings, or credentials because those would not work for anyone else. Read [privacy.md](docs/privacy.md) before publishing your own exported profile. Codex recent-task buttons query only task IDs from your local Codex database; voice transcription runs locally.
 
 ## Project status
 
