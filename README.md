@@ -48,10 +48,46 @@ The default page is an app launcher. Opening an app activates its own keypad pro
 - **Claude Code:** launch a terminal session and organize voice/project commands.
 - **Cursor:** navigation, Agent prompts, review, tests, Git, and PR creation.
 - **Figma/FigJam:** create a FigJam board and select common shape tools.
-- **Grok Bot:** app launcher or a custom command page.
+- **Grok Bot:** homepage launcher only; custom Grok workflows are intentionally not included.
 - **Starlight:** a three-key pulsing-star animation used as decorative filler.
 
-See [the exact layouts](docs/layouts.md), [how the pieces fit together](docs/architecture.md), and the [Claude/Grok recipes](docs/claude-and-grok.md).
+See [the exact layouts](docs/layouts.md), [how the pieces fit together](docs/architecture.md), and the [Claude terminal launcher](docs/claude-launcher.md).
+
+## Codex workflow
+
+The Codex profile centers the three latest tasks on the top row and adds two pages for common prompts and Git work.
+
+| Top row | Middle row | Bottom row |
+|---|---|---|
+| Recent 1 · Recent 2 · Recent 3 | Previous · New Task · Next | Home · Mic Voice · Starlight |
+
+The mic records locally, transcribes with `whisper.cpp`, and sends the prompt to the current Codex task. Additional pages include Explore, Explain, Review, Tests, Fix Bug, Security, Git Status, Diff, Commit, Create PR, Push, and Terminal.
+
+**[See the complete Codex workflow →](docs/codex-workflows.md)**
+
+## Claude Code workflow
+
+The Claude page combines offline dictation, spoken project navigation, terminal tabs, reusable prompts, answer controls, model/cost controls, and Git actions.
+
+| Top row | Middle row | Bottom row |
+|---|---|---|
+| Voice · Go to Project · Voice Draft | Previous Tab · New Claude · Next Tab | Home · Review · Fix Bug |
+
+The project voice action is designed for phrases such as “Go to my website project,” then matches the spoken name against a local project index and opens Claude in that folder. The public guide excludes the private project list.
+
+**[See the complete Claude Code workflow →](docs/claude-workflows.md)**
+
+## Cursor workflow
+
+The Cursor profile follows the same muscle-memory layout as Claude, then adds dedicated prompt, status, and Git pages.
+
+| Top row | Middle row | Bottom row |
+|---|---|---|
+| New Agent · Create PR · Command Palette | Previous Tab · New Agent · Next Tab | Home · Review Code · Fix Bug |
+
+The Create PR action sends the full review-and-create prompt from `src/cursor-workflows/WorkflowCommands.cs`, while the other actions use Cursor menu items, shortcuts, or editable Agent prompts.
+
+**[See the complete Cursor workflow →](docs/cursor-workflows.md)**
 
 ## Requirements
 

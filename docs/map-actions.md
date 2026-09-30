@@ -44,6 +44,6 @@ Use standard Logi Options+ **Open Application** or **Open Webpage** actions:
 |---|---|---|
 | Decorative · Decorative · Figma | Claude Code · ChatGPT/Codex · Grok Bot | VS Code · Cursor · GitHub |
 
-For Claude Code, see [claude-and-grok.md](claude-and-grok.md) for a terminal launcher.
+For Claude Code, see [claude-launcher.md](claude-launcher.md) for a terminal launcher.
 
 The matching images are in [`../assets/homepage`](../assets/homepage). Select **Replace icon** for each launcher action and choose the corresponding PNG.

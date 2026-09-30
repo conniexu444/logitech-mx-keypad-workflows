@@ -2,6 +2,8 @@
 
 Key positions are listed left-to-right, top-to-bottom.
 
+Detailed guides: [Codex](codex-workflows.md) · [Claude Code](claude-workflows.md) · [Cursor](cursor-workflows.md)
+
 ## Launcher
 
 | | | |
