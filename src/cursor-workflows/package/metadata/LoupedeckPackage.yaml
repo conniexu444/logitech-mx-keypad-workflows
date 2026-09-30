@@ -1,0 +1,13 @@
+type: plugin4
+name: CursorWorkflows
+displayName: Cursor Workflows
+description: Editor, Agent, and Git workflows for Cursor
+pluginFileName: CursorWorkflowsPlugin.dll
+version: 1.0.0
+author: Community contributors
+copyright: Personal use
+minimumLoupedeckVersion: 6.4
+pluginFolderWin: bin
+pluginFolderMac: bin
+supportedDevices:
+  - LogitechCreativeFamily

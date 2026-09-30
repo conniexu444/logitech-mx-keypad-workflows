@@ -1,0 +1,13 @@
+type: plugin4
+name: FigmaWorkflows
+displayName: Figma Workflows
+description: FigJam shape and creation tools
+pluginFileName: FigmaWorkflowsPlugin.dll
+version: 1.0.0
+author: Community contributors
+copyright: Personal use
+minimumLoupedeckVersion: 6.4
+pluginFolderWin: bin
+pluginFolderMac: bin
+supportedDevices:
+  - LogitechCreativeFamily

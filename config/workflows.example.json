@@ -1,0 +1,19 @@
+{
+  "launcher": [
+    null,
+    null,
+    "Figma",
+    "Claude Code",
+    "Codex",
+    "Grok Bot",
+    "VS Code",
+    "Cursor",
+    "GitHub"
+  ],
+  "codex": {
+    "page1": ["Recent 1", "Recent 2", "Recent 3", "Previous", "New task", "Next", "Home", "Voice", "Starlight"],
+    "page2": ["Explore", "Explain", "Review", "Optimize", "Refactor", "Tests", "Home", "Fix bug", "Security"],
+    "page3": ["Status", "Diff", "Log", "Commit", "Create PR", "Push", "Home", "Terminal", "New task"]
+  },
+  "figma": ["Square", "Ellipse", "Diamond", "Triangle", "Star", "Connector", "Home", "Sticky", "Text"]
+}

@@ -1,0 +1,14 @@
+.DS_Store
+**/obj/
+**/Release*/
+**/__pycache__/
+**/images/*.png
+**/images/frames/
+backups/
+generated/
+*.wav
+*.log
+*.sqlite*
+.env
+*.pem
+*.key
