@@ -13,7 +13,7 @@ public abstract class MatrixPanelCommand : PluginDynamicCommand
     private readonly Timer _timer;
 
     protected MatrixPanelCommand(String displayName, String panelName)
-        : base(" ", "Pulsing stars; pressing does nothing", "Starlight")
+        : base(displayName, "Pulsing stars; pressing does nothing", "Starlight")
     {
         // Render as a full-key surface instead of an inset command icon.
         this.SetWidget(true);

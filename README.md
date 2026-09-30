@@ -32,6 +32,14 @@ The exact seven launcher images are included in [`assets/homepage`](assets/homep
 
 Use Logi Options+’s **Replace icon** control and select the matching PNG.
 
+## Animated buttons
+
+![Three-key pulsing star animation](assets/animated-stars-preview.gif)
+
+The repository includes the full workflow behind the three synchronized pulsing-star buttons: a frame generator, a Logitech plugin that refreshes the key images at 10 FPS, and instructions for adapting it to your own animation.
+
+Read **[Animated buttons: the three-key Starlight workflow](docs/animated-buttons.md)** for the step-by-step explanation.
+
 ## What the setup does
 
 The default page is an app launcher. Opening an app activates its own keypad profile:

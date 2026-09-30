@@ -9,6 +9,7 @@ from PIL import Image, ImageDraw
 
 
 OUTPUT = Path(__file__).parent / "images" / "frames"
+PREVIEW_OUTPUT = Path(__file__).resolve().parents[2] / "assets" / "animated-stars-preview.gif"
 PANELS = ("left", "center", "right")
 FRAME_COUNT = 24
 
@@ -30,11 +31,28 @@ def draw_frame(panel_index: int, frame_index: int) -> Image.Image:
 
 def main() -> None:
     OUTPUT.mkdir(parents=True, exist_ok=True)
+    preview_frames = []
     for panel_index, panel_name in enumerate(PANELS):
         for frame_index in range(FRAME_COUNT):
             draw_frame(panel_index, frame_index).save(
                 OUTPUT / f"{panel_name}-{frame_index:02d}.png"
             )
+
+    for frame_index in range(FRAME_COUNT):
+        combined = Image.new("RGBA", (270, 90))
+        for panel_index in range(len(PANELS)):
+            combined.alpha_composite(draw_frame(panel_index, frame_index), (panel_index * 90, 0))
+        preview_frames.append(combined.convert("RGB"))
+
+    PREVIEW_OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+    preview_frames[0].save(
+        PREVIEW_OUTPUT,
+        save_all=True,
+        append_images=preview_frames[1:],
+        duration=100,
+        loop=0,
+        optimize=True,
+    )
 
 
 if __name__ == "__main__":
